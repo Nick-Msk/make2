@@ -32,3 +32,13 @@ cleansf2:
 	-rm $(files) sf2
 
 
+a := one two
+b := 'three four'
+x := testx
+test3:
+	printf '$a\n'
+	printf $b'\n'
+	@echo $(x)
+	@echo ${x}
+
+
