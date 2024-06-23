@@ -16,5 +16,19 @@ of:
 	@echo "Always run, first!"
 
 clean:
-	rm sf
+	-rm sf
+	-rm blah*
+
+files = file1 file2
+sf2: $(files)
+	echo "look at this var: " $(files)
+	touch sf2
+
+file1:
+	touch file1
+file2:
+	touch file2
+cleansf2:
+	-rm $(files) sf2
+
 
