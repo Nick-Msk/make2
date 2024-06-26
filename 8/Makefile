@@ -19,6 +19,37 @@ exp:
 	@echo $(two)
 	@echo $$two
 
+three = one ${later}
+four := two ${later}
+five = hello
+five := ${five} there
+
+later = l_a_t_e_r
+
+vars:
+	echo $(three)
+	echo $(four)
+	echo $(five)
+
+six = hi
+six ?= will not be adjusted
+seven ?= will be adjusted
+not_def:
+	echo $(six)
+	echo $(seven)
+
+with_spaces = hello      # ttt
+after = $(with_spaces)there
+nullstring =
+space = $(nullstring) #single
+foo := start
+foo +=end
+
+spaces:
+	echo $(xz)
+	echo "$(after)"
+	echo start"$(space)"end
+	echo $(foo)
 
 clean:
 	rm -rf subdir
