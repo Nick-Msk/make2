@@ -29,3 +29,10 @@ endif
 ifndef var2
 	echo "var2 is not"
 endif
+
+find:
+	ifneq(,$(findstring i, $(MAKEFLAGS)))
+	echo "-i was passed to MAKEFLAGS"
+	endif
+
+
